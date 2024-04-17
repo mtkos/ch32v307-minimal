@@ -4,12 +4,6 @@
 .set MODE0, 1<<0
 
 .section .init
-  j      Reset_Handler
-.align 2
-.skip    4*(TIM1_UP_IRQn - 1)
-.word    TIM1_UP_IRQHandler
-
-Reset_Handler:
   la sp, _estack
 
   li t0, MODE1 | MODE0
